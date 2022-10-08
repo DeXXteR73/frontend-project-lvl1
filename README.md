@@ -6,4 +6,4 @@
 <br><h1>Brain Even</h1>
 <img src="svg/brain-even.svg"></img>
 <br><h1>Brain Calc</h1>
-<script id="asciicast-15WVrqKfVS0tfzeyXT8iBq1MA" src="https://asciinema.org/a/15WVrqKfVS0tfzeyXT8iBq1MA.js" async></script>
+<img src="svg/brain-calc.svg"></img>
