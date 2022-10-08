@@ -2,8 +2,7 @@
   "name": "@hexlet/code",
   "version": "1.0.0",
   "type": "module",
-  "description": "[![Actions Status](https://github.com/DeXXteR73/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/DeXXteR73/frontend-project-lvl1/actions)",
-  "main": "index.js",
+  "description": "A series of 5 console math mini-games",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -26,13 +25,13 @@
     "brain-prime": "bin/brain-prime.js"
   },
   "dependencies": {
-    "eslint-config-airbnb": "^19.0.4",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.26.0",
     "lodash": "^4.17.21",
     "readline-sync": "^1.4.10"
   },
   "devDependencies": {
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
     "eslint": "^8.23.0"
   }
 }

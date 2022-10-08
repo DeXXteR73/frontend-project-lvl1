@@ -1,9 +1,10 @@
-import startGame from '../src/index.js';
+import startGame from '../index.js';
+import random from '../utils.js';
 
-function gcd(num1, num2) {
-  if (num2 > num1) return gcd(num2, num1);
+function findGcd(num1, num2) {
+  if (num2 > num1) return findGcd(num2, num1);
   if (!num2) return num1;
-  return gcd(num2, num1 % num2);
+  return findGcd(num2, num1 % num2);
 }
 
 export default function startGameGcd() {
@@ -12,12 +13,12 @@ export default function startGameGcd() {
   const questions = [];
   const rightAnswers = [];
   for (let i = 0; i < 3; i += 1) {
-    const num1 = Math.floor(Math.random() * (101));
-    const num2 = Math.floor(Math.random() * (101));
+    const num1 = random(1, 100);
+    const num2 = random(1, 100);
 
     questions[i] = `${num1} ${num2}`;
 
-    rightAnswers[i] = gcd(num1, num2);
+    rightAnswers[i] = findGcd(num1, num2);
   }
 
   startGame(rules, questions, rightAnswers);

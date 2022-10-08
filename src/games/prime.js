@@ -1,4 +1,5 @@
-import startGame from '../src/index.js';
+import startGame from '../index.js';
+import random from '../utils.js';
 
 function isPrime(num) {
   if (num <= 1) return false;
@@ -13,9 +14,9 @@ function isPrime(num) {
 export default function startGamePrime() {
   const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-  const num1 = Math.floor(Math.random() * (101));
-  const num2 = Math.floor(Math.random() * (101));
-  const num3 = Math.floor(Math.random() * (101));
+  const num1 = random(1, 100);
+  const num2 = random(1, 100);
+  const num3 = random(1, 100);
   const questions = [num1, num2, num3];
 
   const rAnswer1 = isPrime(num1) ? 'yes' : 'no';
