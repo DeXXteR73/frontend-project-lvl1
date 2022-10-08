@@ -14,7 +14,7 @@ function isPrime(num) {
 export default function startGamePrime() {
   const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-  const questions = randomArray(1, 100, 3);
+  const questions = randomArray(1, 100);
 
   const rAnswer1 = isPrime(questions[0]);
   const rAnswer2 = isPrime(questions[1]);
