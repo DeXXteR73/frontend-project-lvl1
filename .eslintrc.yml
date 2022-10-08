@@ -3,7 +3,7 @@ env:
 
 extends: 
   'airbnb-base'
-  eslint:recommended
+
 
 overrides: []
 
