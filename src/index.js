@@ -13,12 +13,11 @@ export function startGame (rules, questions, rightAnswers) {
         const answer = readlineSync.question('Question: ' + questions[attempt] + '\n');
         const rightAnswer = rightAnswers[attempt];
 
-        if (answer == rightAnswer) {
-            console.log("Correct!");
-        } else {
+        if (answer != rightAnswer) {
             console.log("'" + answer + "' is wrong answer ;(. Correct answer was '" + rightAnswer + "'.");
             break;
         }
+        console.log("Correct!");
     }
 
     if (attempt == 3) {
