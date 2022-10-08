@@ -11,3 +11,5 @@
 <img src="svg/brain-gcd.svg"></img>
 <br><h1>Игра "Арифметическая прогрессия"</h1>
 <img src="svg/brain-progression.svg"></img>
+<br><h1>Игра "Простое ли число?"</h1>
+<img src="svg/brain-prime.svg"></img>
