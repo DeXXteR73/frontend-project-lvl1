@@ -1,5 +1,5 @@
 import startGame from '../index.js';
-import { random } from '../utils.js';
+import random from '../utils.js';
 
 function calcExpression(num1, operation, num2) {
   switch (operation) {
