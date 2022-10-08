@@ -1,15 +1,10 @@
-import { question } from "readline-sync";
 import { startGame } from "../src/index.js";
-
-function random(max) {
-    return Math.floor(Math.random() * (max));
-}
 
 export function startGameCalc() {
     const rules = 'What is the result of the expression?';
 
-    var questions;
-    var rightAnswers;
+    var questions = [];
+    var rightAnswers = [];
     for (let i = 0; i < 3; i++) {
         var num1 = Math.floor(Math.random() * (11));
         var operations = ['+', '-', '*'];
