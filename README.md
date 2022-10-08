@@ -21,20 +21,20 @@ $ npm link
 
 ### Demo brain-even:
 
-<img src="svg/brain-even.svg" loading="lazy"></img>
+<img src="svg/brain-even.svg"></img>
 
 ### Demo brain-calc:
 
-<img src="svg/brain-calc.svg" loading="lazy"></img>
+<img src="svg/brain-calc.svg"></img>
 
 ### Demo brain-gcd:
 
-<img src="svg/brain-gcd.svg" loading="lazy"></img>
+<img src="svg/brain-gcd.svg"></img>
 
 ### Demo brain-progression:
 
-<img src="svg/brain-progression.svg" loading="lazy"></img>
+<img src="svg/brain-progression.svg"></img>
 
 ### Demo brain-prime:
 
-<img src="svg/brain-prime.svg" loading="lazy"></img>
+<img src="svg/brain-prime.svg"></img>
