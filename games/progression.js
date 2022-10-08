@@ -14,7 +14,7 @@ export default function startGameProgression() {
     const diff = Math.floor(Math.random() * (4)) + 2; // from 2 to 5
 
     for (let num = 1; num <= progressionLength; num += 1) {
-      if (num === numToGuessIndex) {
+      if (Number(num) === Number(numToGuessIndex)) {
         numToGuess = startIndex + numToGuessIndex + diff * num;
         questions[i] += '.. ';
       } else {
