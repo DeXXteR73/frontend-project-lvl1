@@ -1,4 +1,4 @@
-import { startGame } from '../src/index.js';
+import startGame from '../src/index.js';
 
 export default function startGameCalc() {
   const rules = 'What is the result of the expression?';

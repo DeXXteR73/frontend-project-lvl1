@@ -1,4 +1,4 @@
-import { startGame } from '../src/index.js';
+import startGame from '../src/index.js';
 
 export default function startGameProgression() {
   const rules = 'What number is missing in the progression?';

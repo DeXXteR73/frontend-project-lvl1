@@ -1,4 +1,4 @@
-import { startGame } from '../src/index.js';
+import startGame from '../src/index.js';
 
 function isPrime(num) {
   if (num <= 1) return false;

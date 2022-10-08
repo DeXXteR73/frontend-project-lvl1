@@ -1,4 +1,4 @@
-import { startGame } from '../src/index.js';
+import startGame from '../src/index.js';
 
 function random(max) {
   return Math.floor(Math.random() * (max));
