@@ -1,5 +1,5 @@
 import startGame from '../index.js';
-import random from '../utils.js';
+import { random } from '../utils.js';
 
 function findGcd(num1, num2) {
   if (num2 > num1) return findGcd(num2, num1);

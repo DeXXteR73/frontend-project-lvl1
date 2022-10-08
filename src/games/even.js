@@ -1,5 +1,5 @@
 import startGame from '../index.js';
-import random from '../utils.js';
+import { randomArray } from '../utils.js';
 
 function isEven(num) {
   return (num % 2) ? 'no' : 'yes';
@@ -8,8 +8,7 @@ function isEven(num) {
 export default function startGameEven() {
   const rules = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-  const questions = new Array(3);
-  questions.fill(random(1, 100));
+  const questions = randomArray(1, 100, 3);
 
   const rAnswer1 = isEven(questions[0]);
   const rAnswer2 = isEven(questions[1]);
