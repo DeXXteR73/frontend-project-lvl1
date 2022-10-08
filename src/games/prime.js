@@ -14,14 +14,12 @@ function isPrime(num) {
 export default function startGamePrime() {
   const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-  const num1 = random(1, 100);
-  const num2 = random(1, 100);
-  const num3 = random(1, 100);
-  const questions = [num1, num2, num3];
+  const questions = [random(1, 100), random(1, 100), random(1, 100)];
 
-  const rAnswer1 = isPrime(num1);
-  const rAnswer2 = isPrime(num2);
-  const rAnswer3 = isPrime(num3);
+  const rAnswer1 = isPrime(questions[0]);
+  const rAnswer2 = isPrime(questions[1]);
+  const rAnswer3 = isPrime(questions[2]);
+
   const rightAnswers = [rAnswer1, rAnswer2, rAnswer3];
 
   startGame(rules, questions, rightAnswers);
