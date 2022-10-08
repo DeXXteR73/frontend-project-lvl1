@@ -23,8 +23,8 @@ $ npm link
 
 <img src="svg/brain-even.svg"></img>
 
-### Demo brain-calc
-:
+### Demo brain-calc:
+
 <img src="svg/brain-calc.svg"></img>
 
 ### Demo brain-gcd:
