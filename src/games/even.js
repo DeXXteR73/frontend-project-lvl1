@@ -8,7 +8,8 @@ function isEven(num) {
 export default function startGameEven() {
   const rules = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-  const questions = [random(1, 100), random(1, 100), random(1, 100)];
+  const questions = new Array(3);
+  questions.fill(random(1, 100));
 
   const rAnswer1 = isEven(questions[0]);
   const rAnswer2 = isEven(questions[1]);
