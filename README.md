@@ -9,3 +9,5 @@
 <img src="svg/brain-calc.svg"></img>
 <br><h1>Игра "НОД"</h1>
 <img src="svg/brain-gcd.svg"></img>
+<br><h1>Игра "Арифметическая прогрессия"</h1>
+<img src="svg/brain-progression.svg"></img>
