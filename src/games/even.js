@@ -8,12 +8,9 @@ const isEven = (num) => (num % 2);
 const startGameEven = () => {
   const rules = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-  for (let i = 0; i < totalAttempts; i += 1) {
-    const num = random();
-    questions[i] = num;
-
-    const rAnswer = isEven(num) ? 'no' : 'yes';
-    rightAnswers[i] = rAnswer;
+  for (let attempt = 0; attempt < totalAttempts; attempt += 1) {
+    questions[attempt] = random();
+    rightAnswers[attempt] = isEven(questions[attempt]) ? 'no' : 'yes';
   }
 
   startGame(rules, questions, rightAnswers);

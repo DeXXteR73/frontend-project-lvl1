@@ -19,15 +19,15 @@ const calcExpression = (num1, operator, num2) => {
 const startGameCalc = () => {
   const rules = 'What is the result of the expression?';
 
-  for (let i = 0; i < totalAttempts; i += 1) {
+  for (let attempt = 0; attempt < totalAttempts; attempt += 1) {
     const num1 = random(1, 10);
     const operators = ['+', '-', '*'];
     const operator = operators[random(0, operators.length - 1)];
     const num2 = random(1, 10);
 
-    questions[i] = `${num1} ${operator} ${num2}`;
+    questions[attempt] = `${num1} ${operator} ${num2}`;
 
-    rightAnswers[i] = calcExpression(num1, operator, num2);
+    rightAnswers[attempt] = calcExpression(num1, operator, num2);
   }
 
   startGame(rules, questions, rightAnswers);
