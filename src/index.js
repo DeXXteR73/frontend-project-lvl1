@@ -1,20 +1,6 @@
 import readlineSync from 'readline-sync';
-import random from './utils.js';
 
 export const totalAttempts = 3;
-
-export const createYesNoGame = (func) => {
-  const questions = [];
-  const rightAnswers = [];
-  for (let i = 0; i < totalAttempts; i += 1) {
-    const num = random();
-    questions[i] = num;
-
-    const rAnswer = func(num) ? 'yes' : 'no';
-    rightAnswers[i] = rAnswer;
-  }
-  return [questions, rightAnswers];
-};
 
 const startGame = (rules, questions, rightAnswers) => {
   // greeting

@@ -1,8 +1,8 @@
 import startGame, { totalAttempts } from '../index.js';
 import random from '../utils.js';
 
-const calcExpression = (num1, operation, num2) => {
-  switch (operation) {
+const calcExpression = (num1, operator, num2) => {
+  switch (operator) {
     case '+':
       return num1 + num2;
     case '-':
@@ -10,7 +10,7 @@ const calcExpression = (num1, operation, num2) => {
     case '*':
       return num1 * num2;
     default:
-      throw new Error("Can't calc the expression");
+      throw new Error(`Can't calc the expression - '${operator}' operator is not supported`);
   }
 };
 
@@ -21,13 +21,13 @@ const startGameCalc = () => {
   const rightAnswers = [];
   for (let i = 0; i < totalAttempts; i += 1) {
     const num1 = random(1, 10);
-    const operations = ['+', '-', '*'];
-    const operation = operations[random(0, 2)]; // 0 = '+', 1 = '-', 2 = '*'
+    const operators = ['+', '-', '*'];
+    const operator = operators[random(0, operators.length - 1)];
     const num2 = random(1, 10);
 
-    questions[i] = `${num1} ${operation} ${num2}`;
+    questions[i] = `${num1} ${operator} ${num2}`;
 
-    rightAnswers[i] = calcExpression(num1, operation, num2);
+    rightAnswers[i] = calcExpression(num1, operator, num2);
   }
 
   startGame(rules, questions, rightAnswers);

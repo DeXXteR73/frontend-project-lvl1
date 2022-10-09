@@ -1,4 +1,5 @@
-import startGame, { createYesNoGame } from '../index.js';
+import startGame, { totalAttempts } from '../index.js';
+import random from '../utils.js';
 
 const isPrime = (num) => {
   if (num <= 1) return false;
@@ -12,7 +13,16 @@ const isPrime = (num) => {
 
 const startGamePrime = () => {
   const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-  const [questions, rightAnswers] = createYesNoGame(isPrime);
+
+  const questions = [];
+  const rightAnswers = [];
+  for (let i = 0; i < totalAttempts; i += 1) {
+    const num = random();
+    questions[i] = num;
+
+    const rAnswer = isPrime(num) ? 'yes' : 'no';
+    rightAnswers[i] = rAnswer;
+  }
 
   startGame(rules, questions, rightAnswers);
 };

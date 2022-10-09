@@ -1,11 +1,7 @@
 import startGame, { totalAttempts } from '../index.js';
 import random from '../utils.js';
 
-const newProgression = () => {
-  const progressionLength = random(5, 10);
-  const numToGuessIndex = random(1, progressionLength);
-  const startIndex = random(1, 20);
-  const diff = random(2, 5);
+const newProgression = (progressionLength, numToGuessIndex, startIndex, diff) => {
   let numToGuess = 0;
   let question = '';
 
@@ -27,7 +23,14 @@ const startGameProgression = () => {
   const questions = [];
   const rightAnswers = [];
   for (let attempt = 0; attempt < totalAttempts; attempt += 1) {
-    const [question, numToGuess] = newProgression();
+    const progressionLength = random(5, 10);
+    const numToGuessIndex = random(1, progressionLength);
+    const startIndex = random(1, 20);
+    const diff = random(2, 5);
+    const [
+      question,
+      numToGuess,
+    ] = newProgression(progressionLength, numToGuessIndex, startIndex, diff);
 
     questions[attempt] = question;
     rightAnswers[attempt] = numToGuess;
