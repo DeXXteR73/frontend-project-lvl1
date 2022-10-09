@@ -1,26 +1,28 @@
-import startGame from '../index.js';
+import startGame, { totalAttempts } from '../index.js';
 import random from '../utils.js';
 
 function isPrime(num) {
-  if (num <= 1) return 'no';
+  if (num <= 1) return false;
 
   for (let i = 2; i <= Math.sqrt(num); i += 1) {
-    if (Number(num % i) === 0) return 'no';
+    if (Number(num % i) === 0) return false;
   }
 
-  return 'yes';
+  return true;
 }
 
 export default function startGamePrime() {
   const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-  const questions = [random(1, 100), random(1, 100), random(1, 100)];
+  const questions = [];
+  const rightAnswers = [];
+  for (let i = 0; i < totalAttempts; i += 1) {
+    const num = random();
+    questions[i] = num;
 
-  const rAnswer1 = isPrime(questions[0]);
-  const rAnswer2 = isPrime(questions[1]);
-  const rAnswer3 = isPrime(questions[2]);
-
-  const rightAnswers = [rAnswer1, rAnswer2, rAnswer3];
+    const rAnswer = isPrime(num) ? 'yes' : 'no';
+    rightAnswers[i] = rAnswer;
+  }
 
   startGame(rules, questions, rightAnswers);
 }

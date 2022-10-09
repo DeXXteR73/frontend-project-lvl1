@@ -1,28 +1,34 @@
-import startGame from '../index.js';
+import startGame, { totalAttempts } from '../index.js';
 import random from '../utils.js';
+
+const newProgression = () => {
+  const progressionLength = random(5, 10);
+  const numToGuessIndex = random(1, progressionLength);
+  const startIndex = random(1, 20);
+  const diff = random(2, 5);
+  let numToGuess;
+  let question = '';
+  for (let num = 1; num <= progressionLength; num += 1) {
+    if (Number(num) === Number(numToGuessIndex)) {
+      numToGuess = startIndex + numToGuessIndex + diff * num;
+      question += '.. ';
+    } else {
+      question += `${startIndex + num + diff * num} `;
+    }
+  }
+  return [question, numToGuess];
+};
 
 export default function startGameProgression() {
   const rules = 'What number is missing in the progression?';
 
-  const questions = ['', '', ''];
+  const questions = [];
   const rightAnswers = [];
-  for (let i = 0; i < 3; i += 1) {
-    const progressionLength = random(5, 10);
-    let numToGuess;
-    const numToGuessIndex = random(1, progressionLength);
-    const startIndex = random(1, 20);
-    const diff = random(2, 5);
+  for (let attempt = 0; attempt < totalAttempts; attempt += 1) {
+    const [question, numToGuess] = newProgression();
 
-    for (let num = 1; num <= progressionLength; num += 1) {
-      if (Number(num) === Number(numToGuessIndex)) {
-        numToGuess = startIndex + numToGuessIndex + diff * num;
-        questions[i] += '.. ';
-      } else {
-        questions[i] += `${startIndex + num + diff * num} `;
-      }
-    }
-
-    rightAnswers[i] = numToGuess;
+    questions[attempt] = question;
+    rightAnswers[attempt] = numToGuess;
   }
 
   startGame(rules, questions, rightAnswers);

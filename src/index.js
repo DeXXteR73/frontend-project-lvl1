@@ -1,5 +1,7 @@
 import readlineSync from 'readline-sync';
 
+export const totalAttempts = 3;
+
 export default function startGame(rules, questions, rightAnswers) {
   // greeting
   console.log('Welcome to the Brain Games!');
@@ -8,10 +10,10 @@ export default function startGame(rules, questions, rightAnswers) {
   // rules
   console.log(rules);
 
-  let attempt;
-  for (attempt = 0; attempt < 3; attempt += 1) {
-    const answer = readlineSync.question(`Question: ${questions[attempt]}\n`);
-    const rightAnswer = rightAnswers[attempt];
+  let lastAttemptIndex;
+  for (lastAttemptIndex = 0; lastAttemptIndex < totalAttempts; lastAttemptIndex += 1) {
+    const answer = readlineSync.question(`Question: ${questions[lastAttemptIndex]}\n`);
+    const rightAnswer = rightAnswers[lastAttemptIndex];
 
     if (String(answer) !== String(rightAnswer)) {
       console.log(`'${answer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.`);
@@ -20,7 +22,7 @@ export default function startGame(rules, questions, rightAnswers) {
     console.log('Correct!');
   }
 
-  if (attempt === 3) {
+  if (lastAttemptIndex === totalAttempts) {
     console.log(`Congratulations, ${name}!`);
   } else {
     console.log(`Let's try again, ${name}!`);

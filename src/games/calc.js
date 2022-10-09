@@ -1,4 +1,4 @@
-import startGame from '../index.js';
+import startGame, { totalAttempts } from '../index.js';
 import random from '../utils.js';
 
 function calcExpression(num1, operation, num2) {
@@ -19,7 +19,7 @@ export default function startGameCalc() {
 
   const questions = [];
   const rightAnswers = [];
-  for (let i = 0; i < 3; i += 1) {
+  for (let i = 0; i < totalAttempts; i += 1) {
     const num1 = random(1, 10);
     const operations = ['+', '-', '*'];
     const operation = operations[random(0, 2)]; // 0 = '+', 1 = '-', 2 = '*'
