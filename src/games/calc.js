@@ -1,4 +1,6 @@
-import startGame, { totalAttempts } from '../index.js';
+import startGame, {
+  questions, rightAnswers, totalAttempts,
+} from '../index.js';
 import random from '../utils.js';
 
 const calcExpression = (num1, operator, num2) => {
@@ -17,8 +19,6 @@ const calcExpression = (num1, operator, num2) => {
 const startGameCalc = () => {
   const rules = 'What is the result of the expression?';
 
-  const questions = [];
-  const rightAnswers = [];
   for (let i = 0; i < totalAttempts; i += 1) {
     const num1 = random(1, 10);
     const operators = ['+', '-', '*'];

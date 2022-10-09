@@ -29,4 +29,6 @@ const startGame = (rules, questions, rightAnswers) => {
   }
 };
 
+export const questions = [];
+export const rightAnswers = [];
 export default startGame;

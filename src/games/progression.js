@@ -1,4 +1,6 @@
-import startGame, { totalAttempts } from '../index.js';
+import startGame, {
+  questions, rightAnswers, totalAttempts,
+} from '../index.js';
 import random from '../utils.js';
 
 const newProgression = (progressionLength, numToGuessIndex, startIndex, diff) => {
@@ -20,8 +22,6 @@ const newProgression = (progressionLength, numToGuessIndex, startIndex, diff) =>
 const startGameProgression = () => {
   const rules = 'What number is missing in the progression?';
 
-  const questions = [];
-  const rightAnswers = [];
   for (let attempt = 0; attempt < totalAttempts; attempt += 1) {
     const progressionLength = random(5, 10);
     const numToGuessIndex = random(1, progressionLength);
