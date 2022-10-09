@@ -1,17 +1,16 @@
-import startGame, {
-  questions, rightAnswers, totalAttempts,
-} from '../index.js';
+import startGame from '../index.js';
 import random from '../utils.js';
 
-const isEven = (num) => (num % 2);
+const rules = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const startGameEven = () => {
-  for (let attempt = 0; attempt < totalAttempts; attempt += 1) {
-    questions[attempt] = random();
-    rightAnswers[attempt] = isEven(questions[attempt]) ? 'no' : 'yes';
-  }
+const startGameEvenRound = () => {
+  const num = random();
+  const expression = num;
+  const rightAnswer = (num % 2) ? 'no' : 'yes';
 
-  startGame('Answer "yes" if the number is even, otherwise answer "no".', questions, rightAnswers);
+  return { expression, rightAnswer };
 };
+
+const startGameEven = () => startGame(rules, startGameEvenRound);
 
 export default startGameEven;

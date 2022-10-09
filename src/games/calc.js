@@ -1,7 +1,7 @@
-import startGame, {
-  questions, rightAnswers, totalAttempts,
-} from '../index.js';
+import startGame from '../index.js';
 import random from '../utils.js';
+
+const rules = 'What is the result of the expression?';
 
 const calcExpression = (num1, operator, num2) => {
   switch (operator) {
@@ -16,21 +16,19 @@ const calcExpression = (num1, operator, num2) => {
   }
 };
 
-const startGameCalc = () => {
-  const rules = 'What is the result of the expression?';
+const startGameCalcRound = () => {
+  const num1 = random(1, 10);
+  const operators = ['+', '-', '*'];
+  const operator = operators[random(0, operators.length - 1)];
+  const num2 = random(1, 10);
 
-  for (let attempt = 0; attempt < totalAttempts; attempt += 1) {
-    const num1 = random(1, 10);
-    const operators = ['+', '-', '*'];
-    const operator = operators[random(0, operators.length - 1)];
-    const num2 = random(1, 10);
+  const expression = `${num1} ${operator} ${num2}`;
 
-    questions[attempt] = `${num1} ${operator} ${num2}`;
+  const rightAnswer = calcExpression(num1, operator, num2);
 
-    rightAnswers[attempt] = calcExpression(num1, operator, num2);
-  }
-
-  startGame(rules, questions, rightAnswers);
+  return { expression, rightAnswer };
 };
+
+const startGameCalc = () => startGame(rules, startGameCalcRound);
 
 export default startGameCalc;

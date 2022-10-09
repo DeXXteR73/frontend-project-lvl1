@@ -1,25 +1,23 @@
-import startGame, {
-  questions, rightAnswers, totalAttempts,
-} from '../index.js';
+import startGame from '../index.js';
 import random from '../utils.js';
 
-const isPrime = (num) => {
-  if (num <= 1) return false;
+const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+
+const startGamePrimeRound = () => {
+  const num = random();
+  const expression = num;
+
+  let rightAnswer = 'yes';
+
+  if (num <= 3) rightAnswer = 'yes';
 
   for (let i = 2; i <= Math.sqrt(num); i += 1) {
-    if (Number(num % i) === 0) return false;
+    if (Number(num % i) === 0) rightAnswer = 'no';
   }
 
-  return true;
+  return { expression, rightAnswer };
 };
 
-const startGamePrime = () => {
-  for (let attempt = 0; attempt < totalAttempts; attempt += 1) {
-    questions[attempt] = random();
-    rightAnswers[attempt] = isPrime(questions[attempt]) ? 'yes' : 'no';
-  }
-
-  startGame('Answer "yes" if given number is prime. Otherwise answer "no".', questions, rightAnswers);
-};
+const startGamePrime = () => startGame(rules, startGamePrimeRound);
 
 export default startGamePrime;
