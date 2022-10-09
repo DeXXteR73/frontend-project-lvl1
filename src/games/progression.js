@@ -3,12 +3,7 @@ import random from '../utils.js';
 
 const rules = 'What number is missing in the progression?';
 
-const startGameProgressionRound = () => {
-  const progressionLength = random(5, 10);
-  const numToGuessIndex = random(1, progressionLength);
-  const startIndex = random(1, 20);
-  const diff = random(2, 5);
-
+const newProgression = (progressionLength, numToGuessIndex, startIndex, diff) => {
   let rightAnswer = 0;
   let expression = '';
 
@@ -20,6 +15,17 @@ const startGameProgressionRound = () => {
       expression += `${startIndex + num + diff * num} `;
     }
   }
+  return [expression, rightAnswer];
+};
+
+const startGameProgressionRound = () => {
+  const progressionLength = random(5, 10);
+  const numToGuessIndex = random(1, progressionLength);
+  const startIndex = random(1, 20);
+  const diff = random(2, 5);
+
+  const [expression,
+    rightAnswer] = newProgression(progressionLength, numToGuessIndex, startIndex, diff);
 
   return { expression, rightAnswer };
 };

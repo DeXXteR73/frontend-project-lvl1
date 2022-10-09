@@ -3,10 +3,12 @@ import random from '../utils.js';
 
 const rules = 'Answer "yes" if the number is even, otherwise answer "no".';
 
+const isEven = (num) => (num % 2) === 0;
+
 const startGameEvenRound = () => {
   const num = random();
   const expression = num;
-  const rightAnswer = (num % 2) ? 'no' : 'yes';
+  const rightAnswer = isEven(num) ? 'yes' : 'no';
 
   return { expression, rightAnswer };
 };
