@@ -6,8 +6,9 @@ const newProgression = () => {
   const numToGuessIndex = random(1, progressionLength);
   const startIndex = random(1, 20);
   const diff = random(2, 5);
-  let numToGuess;
+  let numToGuess = 0;
   let question = '';
+
   for (let num = 1; num <= progressionLength; num += 1) {
     if (Number(num) === Number(numToGuessIndex)) {
       numToGuess = startIndex + numToGuessIndex + diff * num;
@@ -16,10 +17,11 @@ const newProgression = () => {
       question += `${startIndex + num + diff * num} `;
     }
   }
+
   return [question, numToGuess];
 };
 
-export default function startGameProgression() {
+const startGameProgression = () => {
   const rules = 'What number is missing in the progression?';
 
   const questions = [];
@@ -32,4 +34,6 @@ export default function startGameProgression() {
   }
 
   startGame(rules, questions, rightAnswers);
-}
+};
+
+export default startGameProgression;

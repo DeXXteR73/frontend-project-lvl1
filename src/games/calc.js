@@ -1,7 +1,7 @@
 import startGame, { totalAttempts } from '../index.js';
 import random from '../utils.js';
 
-function calcExpression(num1, operation, num2) {
+const calcExpression = (num1, operation, num2) => {
   switch (operation) {
     case '+':
       return num1 + num2;
@@ -12,9 +12,9 @@ function calcExpression(num1, operation, num2) {
     default:
       throw new Error("Can't calc the expression");
   }
-}
+};
 
-export default function startGameCalc() {
+const startGameCalc = () => {
   const rules = 'What is the result of the expression?';
 
   const questions = [];
@@ -31,4 +31,6 @@ export default function startGameCalc() {
   }
 
   startGame(rules, questions, rightAnswers);
-}
+};
+
+export default startGameCalc;
