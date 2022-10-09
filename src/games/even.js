@@ -4,7 +4,7 @@ const isEven = (num) => !(num % 2);
 
 const startGameEven = () => {
   const rules = 'Answer "yes" if the number is even, otherwise answer "no".';
-  const [questions, rightAnswers] = createYesNoGame('even', isEven);
+  const [questions, rightAnswers] = createYesNoGame(isEven);
 
   startGame(rules, questions, rightAnswers);
 };

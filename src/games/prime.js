@@ -12,7 +12,7 @@ const isPrime = (num) => {
 
 const startGamePrime = () => {
   const rules = 'Answer "yes" if given number is even. Otherwise answer "no".';
-  const [questions, rightAnswers] = createYesNoGame('prime', isPrime);
+  const [questions, rightAnswers] = createYesNoGame(isPrime);
 
   startGame(rules, questions, rightAnswers);
 };
