@@ -14,14 +14,12 @@ const isPrime = (num) => {
 };
 
 const startGamePrime = () => {
-  const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-
   for (let attempt = 0; attempt < totalAttempts; attempt += 1) {
     questions[attempt] = random();
     rightAnswers[attempt] = isPrime(questions[attempt]) ? 'yes' : 'no';
   }
 
-  startGame(rules, questions, rightAnswers);
+  startGame('Answer "yes" if given number is prime. Otherwise answer "no".', questions, rightAnswers);
 };
 
 export default startGamePrime;

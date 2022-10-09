@@ -9,7 +9,7 @@ const startGame = (rules, questions, rightAnswers) => {
   console.log(`Hello, ${name}!`);
   // rules
   console.log(rules);
-
+  // game
   let lastAttemptIndex;
   for (lastAttemptIndex = 0; lastAttemptIndex < totalAttempts; lastAttemptIndex += 1) {
     const answer = readlineSync.question(`Question: ${questions[lastAttemptIndex]}\n`);
