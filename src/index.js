@@ -3,8 +3,7 @@ import random from './utils.js';
 
 export const totalAttempts = 3;
 
-export const createYesNoGame = (rule, isFunc) => {
-  const rules = `Answer "yes" if given number is ${rule}. Otherwise answer "no".`;
+export const createYesNoGame = (isFunc) => {
   const questions = [];
   const rightAnswers = [];
   for (let i = 0; i < totalAttempts; i += 1) {
@@ -14,7 +13,7 @@ export const createYesNoGame = (rule, isFunc) => {
     const rAnswer = isFunc(num) ? 'yes' : 'no';
     rightAnswers[i] = rAnswer;
   }
-  return [rules, questions, rightAnswers];
+  return [questions, rightAnswers];
 };
 
 const startGame = (rules, questions, rightAnswers) => {
